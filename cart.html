@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="PePz.js"></script>
+</head>
+<body>
+<style>
+.cart-container {
+    padding: 20px;
+    background-color: #f8f8f8;
+    min-height: 500px;
+}
+
+.cart-container h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* --- Cart Item Styles --- */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cart-item .item-details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.cart-item .item-details h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.cart-item .item-details p {
+    color: #666;
+}
+
+.cart-item .item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item .item-actions input {
+    width: 50px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.cart-item .item-actions button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* --- Cart Total Section Styles --- */
+.cart-total {
+    background-color: white;
+    padding: 15px;
+    text-align: right;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total p {
+    font-size: 1.2em;
+}
+
+.cart-total .total-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: green;
+}
+
+.cart-total .checkout-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-total .checkout-button:hover {
+    background-color: #333;
+}
+
+/* Product Section Styles */
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.product img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product .product-details {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.product .product-details h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.product .product-details p {
+    color: #666;
+}
+
+.product .product-actions {
+    display: flex;
+    align-items: center;
+}
+
+.product .product-actions button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.product .product-actions button:hover {
+    background-color: darkgreen;
+}
+</style>
+    <!-- Header with Cart Icon -->
+    <header>
+        <div class="logo">SHOPIER.</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="cart.html"><img src="cart.png" alt="Fashion Image"></a> 
+            <a href="user.html"><img src="user.png"alt="icon"></a>
+        </div>
+    </header>
+
+
+    <!-- Product Section -->
+    <div class="product">
+        <img src="https://via.placeholder.com/100" alt="Product Image">
+        <div class="product-details">
+            <h3>Product Name 1</h3>
+            <p>Product description goes here.</p>
+        </div>
+        <div class="product-actions">
+            <button onclick="addToCart('Product Name 1', 29.99)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/100" alt="Product Image">
+        <div class="product-details">
+            <h3>Product Name 2</h3>
+            <p>Product description goes here.</p>
+        </div>
+        <div class="product-actions">
+            <button onclick="addToCart('Product Name 2', 49.99)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+
+        <!-- Cart Items will be inserted here -->
+
+        <div class="cart-total">
+            <p>Total: <span class="total-price" id="totalPrice">$0.00</span></p>
+            <button class="checkout-button" id="checkoutBtn" disabled>Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SHOPIER. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
